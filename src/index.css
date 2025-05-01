@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'DIN Round Pro', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-[#F7F7F7] text-[#4B4B4B];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-2xl font-bold transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-[#58CC02] text-white hover:bg-[#46a001];
+  }
+  
+  .btn-secondary {
+    @apply bg-[#1CB0F6] text-white hover:bg-[#0095d9];
+  }
+  
+  .input {
+    @apply px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-[#1CB0F6] focus:outline-none;
+  }
+}
+
+/* Custom Styles */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  stroke-dasharray: 283;
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+} 
